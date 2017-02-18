@@ -7,6 +7,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.u1fukui.android.demo.dagger.yasashi.YasashiSampleActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +33,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
 
     private List<DemoItem> createList() {
         List<DemoItem> list = new ArrayList<>();
-        list.add(new DemoItem(MainActivity.class, "Main"));
-        list.add(new DemoItem(MainActivity.class, "Main2"));
+        list.add(new DemoItem(YasashiSampleActivity.class, "やさしいDagger2"));
         return list;
     }
 
