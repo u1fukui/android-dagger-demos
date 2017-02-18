@@ -18,7 +18,7 @@ public class YasashiSampleActivity extends AppCompatActivity {
 
     // インスタンスが注入されるフィールド
     @Inject
-    Dog dog;
+    Owner owner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,6 @@ public class YasashiSampleActivity extends AppCompatActivity {
         // 依存の注入を実行します
         component.inject(this);
 
-        String name = dog.getName();
-        Log.d(TAG, name);
+        Log.d(TAG, owner.getPetName());
     }
 }
