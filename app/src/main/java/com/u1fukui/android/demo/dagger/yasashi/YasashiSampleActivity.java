@@ -3,6 +3,7 @@ package com.u1fukui.android.demo.dagger.yasashi;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.u1fukui.android.demo.dagger.R;
 
@@ -23,18 +24,19 @@ public class YasashiSampleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_yasashi);
 
         // SampleComponentからDaggerSampleComponentが自動生成されるので、それを使ってSampleComponentを作ります。
         SampleComponent component = DaggerSampleComponent.builder()
                 // 使用するModuleのインスタンスを指定します。
                 // （ここでdeprecatedになることがありますが、一旦すべてコードを書いてビルドすると消えると思います）
-                .sampleModule(new SampleModule())
+                .sampleModule(new SampleModule()) // ProductFlavor によって SampleModule の実装が異なる
                 .build();
 
         // 依存の注入を実行します
         component.inject(this);
 
-        Log.d(TAG, owner.getPetName());
+        TextView textView = (TextView) findViewById(R.id.text);
+        textView.setText(owner.getPetName());
     }
 }
