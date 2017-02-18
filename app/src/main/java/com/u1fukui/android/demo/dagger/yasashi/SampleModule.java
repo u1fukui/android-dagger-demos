@@ -7,7 +7,7 @@ import dagger.Provides;
 public class SampleModule {
 
     @Provides
-    Dog provideDog() {
+    Pet providePet() {
         return new Dog();
     }
 }

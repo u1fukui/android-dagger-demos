@@ -4,14 +4,14 @@ import javax.inject.Inject;
 
 public class Owner {
 
-    private Dog dog;
+    private Pet pet;
 
     @Inject
-    public Owner(Dog dog) {
-        this.dog = dog;
+    public Owner(Pet pet) {
+        this.pet = pet;
     }
 
     public String getPetName() {
-        return dog.getName();
+        return pet.getName();
     }
 }
