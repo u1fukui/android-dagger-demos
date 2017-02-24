@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android-dagger-demos</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_mypage">MyPage</string>
 </resources>

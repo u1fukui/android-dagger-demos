@@ -1,9 +1,10 @@
-package com.u1fukui.android.demo.dagger.codepath;
+package com.u1fukui.android.demo.dagger.droidkaigi2017;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.u1fukui.android.demo.dagger.R;
@@ -18,27 +19,25 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2
- */
-public class CodePathActivity extends AppCompatActivity {
+public class HomeFragment extends DkBaseFragment {
+
+    public static final String TAG = HomeFragment.class.getSimpleName();
 
     @Inject
     GitHubApi gitHubApi;
 
-    @Inject
-    SharedPreferences sharedPreferences;
+    public static HomeFragment newInstance() {
+        return new HomeFragment();
+    }
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.text);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.text, container, false);
 
-        // assign singleton instances to fields
-        // We need to cast to `CodePathApp` in order to get the right method
-        ((CodePathApp) getApplication()).getGitHubComponent().inject(this);
+        final TextView textView = (TextView) view.findViewById(R.id.text);
 
-        final TextView textView = (TextView) findViewById(R.id.text);
+        getComponent().inject(this);
         gitHubApi.getRepositories("octocat").enqueue(new Callback<List<GitHubRepository>>() {
             @Override
             public void onResponse(Call<List<GitHubRepository>> call, Response<List<GitHubRepository>> response) {
@@ -54,5 +53,7 @@ public class CodePathActivity extends AppCompatActivity {
                 textView.setText(t.getMessage());
             }
         });
+
+        return view;
     }
 }

@@ -1,6 +1,6 @@
 package com.u1fukui.android.demo.dagger.codepath.di.module;
 
-import com.u1fukui.android.demo.dagger.codepath.api.GitHubApi;
+import com.u1fukui.android.demo.dagger.api.GitHubApi;
 import com.u1fukui.android.demo.dagger.codepath.di.scope.UserScope;
 
 import dagger.Module;

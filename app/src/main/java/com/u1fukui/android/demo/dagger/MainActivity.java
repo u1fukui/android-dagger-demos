@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.u1fukui.android.demo.dagger.codepath.CodePathActivity;
+import com.u1fukui.android.demo.dagger.droidkaigi2017.DkMainActivity;
 import com.u1fukui.android.demo.dagger.yasashi.YasashiSampleActivity;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
         List<DemoItem> list = new ArrayList<>();
         list.add(new DemoItem(YasashiSampleActivity.class, "やさしいDagger2"));
         list.add(new DemoItem(CodePathActivity.class, "CodePath"));
+        list.add(new DemoItem(DkMainActivity.class, "DroidKaigi2017"));
         return list;
     }
 

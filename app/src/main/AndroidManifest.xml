@@ -3,9 +3,10 @@
     package="com.u1fukui.android.demo.dagger">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".codepath.CodePathApp"
+        android:name=".droidkaigi2017.DkApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,6 +21,7 @@
         </activity>
         <activity android:name=".yasashi.YasashiSampleActivity" />
         <activity android:name=".codepath.CodePathActivity" />
+        <activity android:name=".droidkaigi2017.DkMainActivity" />
     </application>
 
 </manifest>

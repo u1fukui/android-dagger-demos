@@ -1,4 +1,4 @@
-package com.u1fukui.android.demo.dagger.codepath.model;
+package com.u1fukui.android.demo.dagger.api.model;
 
 import lombok.Value;
 

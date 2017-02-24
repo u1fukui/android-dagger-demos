@@ -1,10 +1,9 @@
-package com.u1fukui.android.demo.dagger.codepath.api;
+package com.u1fukui.android.demo.dagger.api;
 
-import com.u1fukui.android.demo.dagger.codepath.model.GitHubRepository;
+import com.u1fukui.android.demo.dagger.api.model.GitHubRepository;
 
 import java.util.List;
 
-import lombok.Getter;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
